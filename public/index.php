@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\HomeController;
@@ -21,13 +21,25 @@ switch ($route) {
         break;
     case 'login':
         $logincontroller = new LoginController();
-        $logincontroller->login();
+        $logincontroller->loginUrl();
         break;
-    case 'creat':
+    case 'creat_user':
             $logincontroller = new LoginController();
-            $logincontroller->creat();
+            $logincontroller->login();
             break;
-    // Add more cases for other routes as needed
+    case 'logout':
+            $logincontroller = new LoginController();
+            $logincontroller->logout();
+            break;
+    case 'register':
+            $logincontroller = new LoginController();
+            $logincontroller->registerUrl();
+            break;
+    case 'register_user':
+            $logincontroller = new LoginController();
+            $logincontroller->register();
+            break;
+    // Add more cases for other routes as needed    
     default:
         // Handle 404 or redirect to the default route
         header('HTTP/1.0 404 Not Found');

@@ -24,6 +24,19 @@
     <?php endif; ?>
 
     <button id="loadMore">Load More Users</button>
+   <?php if($_SESSION['autoriser'] == "oui"):?>
+   <h1> <?= $_SESSION['username']?> you alredy connected</h1> <span><a href="?route=logout">Logout</a></span>
+   <?php else: ?>
+       
+ 
+   <a href="?route=login">Go To login Page</a>
+   <?php endif; ?>
+      
+ 
+
+   
+    
+  
 
     <script type="text/javascript" src="/assets/js/script.js"></script>
 </body>

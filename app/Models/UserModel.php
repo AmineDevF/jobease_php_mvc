@@ -28,5 +28,25 @@ class UserModel
        
         return $users;
     }
+    public function login($email)
+    {
+
+
+        $result = $this->db->query("SELECT * FROM users where email ='$email'");
+        $row  = mysqli_num_rows($result) ;
+        if($row > 0){
+           return $users = $result->fetch_all(MYSQLI_ASSOC);
+        }
+
+    }
+    public function register($email , $hashedPassword)
+    {
+        $result = $this->db->query("INSERT INTO `users`(`email`, `password`) VALUES ('$email','$hashedPassword')");
+       
+        
+        return $result;
+
+
+    }
 }
 ?>

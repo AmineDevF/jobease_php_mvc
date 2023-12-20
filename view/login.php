@@ -6,10 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1><?= $data?></h1>
-    <form method="post" action="?route=creat">
+    <h1>login</h1>
+    <form method="post" action="?route=creat_user">
     <label for="match">Match:</label>
-    <input type="text" name="match" id="match">
+    <input type="text" name="email" id="email">
+    <input type="password" name="password" id="password">
     <button type="submit">Submit</button>
 </form>
 </form>
